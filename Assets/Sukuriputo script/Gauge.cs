@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class Gauge : MonoBehaviour
+public class Gauge
 {
     [Range(1, 100)]
     public float maxGauge = 100f;
