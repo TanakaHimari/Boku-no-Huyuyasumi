@@ -7,16 +7,19 @@ public class GameManager : MonoBehaviour
     [System.Serializable]
     public class GaugeRuntime
     {
-        //ゲージの設定データ
+        [Header("ゲージの設定データ")]
         public GaugeData data;
-        //ゲージ画像
+        [Header("ゲージの画像")]
         public Image image;
-        // 実行時のゲージ値
+        [Header("実行時のゲージの値")]
         public float currentGauge;
+
+      
+
 
         public void Initialize()
         {
-            currentGauge = data.startGauge; 
+            currentGauge = data.startGauge;
             UpdateUI();
         }
 
@@ -53,9 +56,20 @@ public class GameManager : MonoBehaviour
         }
 
 
+
+
     }
     [Header("ゲーム内で扱うゲージ")]
     public List<GaugeRuntime> gauges = new List<GaugeRuntime>();
+
+    [Header("隠しボタンの設定データ")]
+    public SecretButtonData secretButtonData;
+
+    [Header("出現するもうひとつボタン")]
+    public GameObject specialButton;
+    [Header("出現条件")]
+    [Tooltip("データの値がこの数になったときにもうひとつボタンが出現")]
+    public float appearThreshold = 50f;
 
     private void Start()
     {
@@ -63,9 +77,46 @@ public class GameManager : MonoBehaviour
         foreach (var gauge in gauges)
         {
             gauge.Initialize();
-        }
 
+        }
+        CheckButtonAppearance();
     }
+    //隠しボタンを出現させる
+    /// <summary>
+    /// 隠しボタンを出すべきかどうかを判定する処理
+    /// </summary>
+    private void CheckButtonAppearance()
+    {
+        // 出現条件を監視する対象のゲージ
+        var gauge = gauges[secretButtonData.targetGaugeIndex];
+
+        // 条件を満たしたらボタンを表示、満たさなければ非表示
+        if (gauge.currentGauge <= secretButtonData.appearThreshold)
+            specialButton.SetActive(true);
+        else
+            specialButton.SetActive(false);
+    }
+
+
+    /// <summary>
+    /// 隠しボタンが押されたときの処理
+    /// </summary>
+    public void OnSecretButtonClick()
+    {
+        var manager = secretButtonData.targetManager;
+
+        // 操作対象のゲージ
+        var target = gauges[secretButtonData.targetGaugeIndex];
+
+        // 指定量だけゲージを増やす（または減らす）
+        target.currentGauge += secretButtonData.fluctuationAmount;
+
+        // UI を更新
+        target.UpdateUI();
+    }
+
+
+
 
     //ボタンから呼ばれるゲージ増減処理
     public void AddGauge()
@@ -81,6 +132,7 @@ public class GameManager : MonoBehaviour
             
 
         }
+        CheckButtonAppearance();
     }
 
     public void ReduceGauge()
@@ -94,6 +146,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("ゼロになりました");
             }
         }
+        CheckButtonAppearance();
     }
 
 }
