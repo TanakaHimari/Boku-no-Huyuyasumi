@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GaugeData
   maxGauge: 100
   startGauge: 100
-  increaseAmount: -5
+  increaseAmount: 1
   gaugeSprite: {fileID: 21300000, guid: ffb7f243439a73442a0b2bec74fd497b, type: 3}
