@@ -18,4 +18,13 @@ public class SecretButtonData : ScriptableObject
     [Header("ボタン出現条件")]
     [Tooltip("この数値になったらボタンが表示されます")]
     public float appearThreshold;
+
+    public GaugeConditionType conditionType;
+
+}
+
+public enum GaugeConditionType
+{
+    LessOrEqual,   // 減るゲージ用（<=）
+    GreaterOrEqual // 増えるゲージ用（>=）
 }

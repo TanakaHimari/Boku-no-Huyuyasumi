@@ -87,14 +87,22 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void CheckButtonAppearance()
     {
-        // 出現条件を監視する対象のゲージ
         var gauge = gauges[secretButtonData.targetGaugeIndex];
 
-        // 条件を満たしたらボタンを表示、満たさなければ非表示
-        if (gauge.currentGauge <= secretButtonData.appearThreshold)
-            specialButton.SetActive(true);
-        else
-            specialButton.SetActive(false);
+        bool shouldAppear = false;
+
+        switch (secretButtonData.conditionType)
+        {
+            case GaugeConditionType.LessOrEqual:
+                shouldAppear = gauge.currentGauge <= secretButtonData.appearThreshold;
+                break;
+
+            case GaugeConditionType.GreaterOrEqual:
+                shouldAppear = gauge.currentGauge >= secretButtonData.appearThreshold;
+                break;
+        }
+
+        specialButton.SetActive(shouldAppear);
     }
 
 
@@ -113,6 +121,19 @@ public class GameManager : MonoBehaviour
 
         // UI を更新
         target.UpdateUI();
+
+        var gauge = gauges[secretButtonData.targetGaugeIndex];
+
+        if (gauge.IsFull())
+        {
+            Debug.Log("満たされました");
+        }
+
+        if (gauge.IsEmpty())
+        {
+            Debug.Log("ゼロになりました");
+        }
+
     }
 
 
