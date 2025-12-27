@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
+    public Scenechange sceneChanger;
+
+
     [System.Serializable]
     public class GaugeRuntime
     {
@@ -14,7 +17,9 @@ public class GameManager : MonoBehaviour
         [Header("実行時のゲージの値")]
         public float currentGauge;
 
-      
+        
+
+
 
 
         public void Initialize()
@@ -126,7 +131,15 @@ public class GameManager : MonoBehaviour
 
         if (gauge.IsFull())
         {
-            Debug.Log("満たされました");
+            if (sceneChanger != null)
+            {
+                sceneChanger.ChangeScene();
+            }
+            else
+            {
+                Debug.Log("sceneChanger が設定されていないため、シーン移動は行いません");
+            }
+
         }
 
         if (gauge.IsEmpty())
@@ -142,15 +155,26 @@ public class GameManager : MonoBehaviour
     //ボタンから呼ばれるゲージ増減処理
     public void AddGauge()
     {
+
+
         foreach (var gauge in gauges)
         {
             gauge.AddGauge();
 
             if (gauge.IsFull())
             {
-                Debug.Log("満たされました");
+                if (sceneChanger != null)
+                {
+                    sceneChanger.ChangeScene();
+                }
+                else
+                {
+                    Debug.Log("sceneChanger が設定されていないため、シーン移動は行いません");
+                }
+
+
             }
-            
+
 
         }
         CheckButtonAppearance();

@@ -48,6 +48,9 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+
+        DontDestroyOnLoad(gameObject);
+
         // Singleton（唯一のインスタンス）を作る処理
         if (Instance != null && Instance != this)
         {
@@ -74,6 +77,7 @@ public class SoundManager : MonoBehaviour
     /// <param name="volume">音量</param>
     public void PlayBGM(AudioClip clip, float volume = 1f)
     {
+
         //再生する曲をセット
         bgmSource.clip = clip;   
         //音量をセット

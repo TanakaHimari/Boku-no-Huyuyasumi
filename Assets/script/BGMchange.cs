@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using System.Collections;
+
+
 
 public class BGMchange : MonoBehaviour
 {
@@ -14,15 +17,20 @@ public class BGMchange : MonoBehaviour
     /// <summary>
     /// Inspector で指定した BGM を再生する
     /// </summary>
+    /// 
+    private IEnumerator Start()
+    {
+        // 1フレーム待つ（SoundManager が生成されるのを待つ）
+        yield return null;
+
+        PlayBGM();
+    }
+
     public void PlayBGM()
     {
         SoundManager.Instance.PlayBGM(bgmClip, volume);
     }
-    private void Start()
-    {
-        PlayBGM();
-    }
-
+   
 
 
 }
