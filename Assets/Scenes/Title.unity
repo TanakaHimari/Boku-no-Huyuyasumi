@@ -167,12 +167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 960, y: 540}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -293,8 +293,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u59CB\u3081\u308B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c74b85007acd5d24988a7c9af2ec92f9, type: 2}
-  m_sharedMaterial: {fileID: 2727370196546953307, guid: c74b85007acd5d24988a7c9af2ec92f9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb3621f8a22488b4389affdad627f16e, type: 2}
+  m_sharedMaterial: {fileID: 3481860156586928739, guid: fb3621f8a22488b4389affdad627f16e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea78a2c834c82cc4db8d0909d55a12b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scenechange
-  sceneName: InGame
+  sceneName: Story
 --- !u!1001 &214588885552364967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1868,6 +1868,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 50195375}
     m_Modifications:
+    - target: {fileID: 2265751277368873034, guid: 5ab092f6bb3242048b8ba8d4ac839821, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fb3621f8a22488b4389affdad627f16e, type: 2}
+    - target: {fileID: 2265751277368873034, guid: 5ab092f6bb3242048b8ba8d4ac839821, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3481860156586928739, guid: fb3621f8a22488b4389affdad627f16e, type: 2}
+    - target: {fileID: 2265751277368873034, guid: 5ab092f6bb3242048b8ba8d4ac839821, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5946324667662501396, guid: 5ab092f6bb3242048b8ba8d4ac839821, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

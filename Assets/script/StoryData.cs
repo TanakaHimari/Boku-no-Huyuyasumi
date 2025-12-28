@@ -8,6 +8,8 @@ public class StoryData : ScriptableObject
 {
     public List<Story> stories = new List<Story>();
 }
+
+[System.Serializable]
 public class Story
 
 {
