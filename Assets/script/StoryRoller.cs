@@ -16,6 +16,10 @@ public class StoryRoller : MonoBehaviour
 
     [Header("Text を入れる親オブジェクト（Mask付き）")]
     public RectTransform viewport;
+
+    [Header("シーンチェンジするY位置（Viewport基準）")]
+    public float endThreshold = 200f;
+
     [Header("終わったら移動するシーン名")]
     public string nextSceneName;
 
@@ -44,11 +48,11 @@ public class StoryRoller : MonoBehaviour
         // 上方向へ移動
         textRect.anchoredPosition += Vector2.up * scrollSpeed * Time.deltaTime;
 
-        // 完全に上へ消えたら止める（必要ならイベント呼べる）
-        if (textRect.anchoredPosition.y >= textRect.rect.height)
+        //最後の文字が座標のとこまで来たらscene移動
+        if (textRect.anchoredPosition.y >= textRect.rect.height - endThreshold)
         {
             SceneManager.LoadScene(nextSceneName);
-
         }
+
     }
 }

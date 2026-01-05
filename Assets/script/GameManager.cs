@@ -145,6 +145,7 @@ public class GameManager : MonoBehaviour
         if (gauge.IsEmpty())
         {
             Debug.Log("É[ÉçÇ…Ç»ÇËÇ‹ÇµÇΩ");
+            sceneChanger.ChangeScene();
         }
 
     }
@@ -189,6 +190,7 @@ public class GameManager : MonoBehaviour
             if (gauge.IsEmpty())
             {
                 Debug.Log("É[ÉçÇ…Ç»ÇËÇ‹ÇµÇΩ");
+                sceneChanger.ChangeScene();
             }
         }
         CheckButtonAppearance();

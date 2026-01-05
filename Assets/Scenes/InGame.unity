@@ -1103,54 +1103,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546039828}
   m_CullTransparentMesh: 1
---- !u!1 &581989632
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 581989634}
-  - component: {fileID: 581989633}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &581989633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581989632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6c570683119adb47a98f4903b8f0164, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  audioMixer: {fileID: 0}
-  bgmSource: {fileID: 1127477262}
-  seSource: {fileID: 1850556483}
-  seList: []
---- !u!4 &581989634
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581989632}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 464.63684, y: 281.8033, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &591885019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2198,8 +2150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 354, y: -208.00003}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 350, y: -208.00003}
+  m_SizeDelta: {x: 120, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1010748573
 MonoBehaviour:
@@ -2325,7 +2277,7 @@ PrefabInstance:
     - target: {fileID: 2780228621464880537, guid: eb82edffdda902e419aeecbc35d2f33d, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: d03907294cfedb04ca2fcf0eecefd60b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3391969378625258997, guid: eb82edffdda902e419aeecbc35d2f33d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 471.68503
@@ -2375,11 +2327,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb82edffdda902e419aeecbc35d2f33d, type: 3}
---- !u!82 &1127477262 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2780228621464880537, guid: eb82edffdda902e419aeecbc35d2f33d, type: 3}
-  m_PrefabInstance: {fileID: 1127477261}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1145080903 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8370316386015186501, guid: ef7d17939ce53304b832ed8d3a68fae9, type: 3}
@@ -3389,7 +3336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea78a2c834c82cc4db8d0909d55a12b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scenechange
-  sceneName: 
+  sceneName: Bad
 --- !u!4 &1709593412
 Transform:
   m_ObjectHideFlags: 0
@@ -3437,10 +3384,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 533642725}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 340, y: -186}
-  m_SizeDelta: {x: -860, y: -440}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 333, y: -186}
+  m_SizeDelta: {x: 120, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754728113
 MonoBehaviour:
@@ -3466,7 +3413,7 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 0
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -3537,11 +3484,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af9db6d351bab0249886e03859859bda, type: 3}
---- !u!82 &1850556483 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2585786717249739073, guid: af9db6d351bab0249886e03859859bda, type: 3}
-  m_PrefabInstance: {fileID: 1850556482}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1883694057
 GameObject:
   m_ObjectHideFlags: 0
@@ -4474,4 +4416,3 @@ SceneRoots:
   - {fileID: 1592654320}
   - {fileID: 1945250514}
   - {fileID: 1709593412}
-  - {fileID: 581989634}

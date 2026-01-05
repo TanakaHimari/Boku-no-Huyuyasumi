@@ -49,25 +49,27 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
 
-        DontDestroyOnLoad(gameObject);
-
-        // Singleton（唯一のインスタンス）を作る処理
+        // すでに存在しているなら自分を破棄
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); // 2つ目以降は破棄
+            Destroy(gameObject);
             return;
         }
-        Instance = this; // 自分を唯一のインスタンスとして登録
-        DontDestroyOnLoad(gameObject); // シーンをまたいでも消えないようにする
 
-        // SE のリストを辞書に変換（名前 → データ）
+        // 自分を唯一のインスタンスとして登録
+        Instance = this;
+
+        // シーンをまたいでも破壊されないようにする
+        DontDestroyOnLoad(gameObject);
+
+        // SE の辞書を作成
         seDict = new Dictionary<string, SoundData>();
         foreach (var s in seList)
         {
-            // 同じ名前が重複していないかチェックしつつ追加
             if (!seDict.ContainsKey(s.name))
                 seDict.Add(s.name, s);
         }
+
 
     }
     /// <summary>
