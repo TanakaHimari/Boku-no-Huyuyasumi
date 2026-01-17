@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d6acc23b9996a45bdef41fa4a17819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  sceneChanger: {fileID: 0}
+  sceneChanger: {fileID: 1945250513}
   gauges:
   - data: {fileID: 11400000, guid: a592173e773d5ce4fa573ef4b7702218, type: 2}
     image: {fileID: 1928115061}
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 508897704}
   - component: {fileID: 508897703}
   m_Layer: 5
-  m_Name: SecretButton (1)
+  m_Name: "\u307E\u308F\u3059Button (1)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1680,7 +1680,7 @@ GameObject:
   - component: {fileID: 838616996}
   - component: {fileID: 838616995}
   m_Layer: 5
-  m_Name: HeartSecretButton (2)
+  m_Name: "\u30AD\u30B9SecretButton (2)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
